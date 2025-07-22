@@ -1,0 +1,53 @@
+2025-07-22 22:42:42,243 - INFO - Model and scaler loaded successfully.
+2025-07-22 22:42:42,259 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.101:5000
+2025-07-22 22:42:42,259 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 22:43:26,695 - ERROR - Prediction error: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- cp_atypical_angina
+- cp_non_anginal
+- cp_typical_angina
+- dataset_Hungarian
+- dataset_VA
+- ...
+Feature names seen at fit time, yet now missing:
+- cp_atypical angina
+- cp_non-anginal
+- cp_typical angina
+- dataset_Hungary
+- dataset_Switzerland
+- ...
+
+2025-07-22 22:43:26,695 - ERROR - Traceback:
+Traceback (most recent call last):
+  File "C:\Users\saaja\Downloads\ML\Logistic Regression\backend.py", line 101, in predict
+    probability = model.predict_proba(input_df)[0][1]
+  File "C:\Users\saaja\AppData\Local\Programs\Python\Python310\lib\site-packages\sklearn\linear_model\_logistic.py", line 1428, in predict_proba
+    return super()._predict_proba_lr(X)
+  File "C:\Users\saaja\AppData\Local\Programs\Python\Python310\lib\site-packages\sklearn\linear_model\_base.py", line 389, in _predict_proba_lr
+    prob = self.decision_function(X)
+  File "C:\Users\saaja\AppData\Local\Programs\Python\Python310\lib\site-packages\sklearn\linear_model\_base.py", line 351, in decision_function
+    X = validate_data(self, X, accept_sparse="csr", reset=False)
+  File "C:\Users\saaja\AppData\Local\Programs\Python\Python310\lib\site-packages\sklearn\utils\validation.py", line 2919, in validate_data
+    _check_feature_names(_estimator, X, reset=reset)
+  File "C:\Users\saaja\AppData\Local\Programs\Python\Python310\lib\site-packages\sklearn\utils\validation.py", line 2777, in _check_feature_names
+    raise ValueError(message)
+ValueError: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- cp_atypical_angina
+- cp_non_anginal
+- cp_typical_angina
+- dataset_Hungarian
+- dataset_VA
+- ...
+Feature names seen at fit time, yet now missing:
+- cp_atypical angina
+- cp_non-anginal
+- cp_typical angina
+- dataset_Hungary
+- dataset_Switzerland
+- ...
+
+2025-07-22 22:43:26,704 - INFO - 127.0.0.1 - - [22/Jul/2025 22:43:26] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
